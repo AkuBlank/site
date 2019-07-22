@@ -1,8 +1,8 @@
 from django import forms
 from .models import Post
 
-class PostForm(forms.ModelForm):
+class PostForm(forms.ModelForm): #создали тип формы
 
-    class Meta:
-        model = Post
-        fields = ('title', 'text',)
+    class Meta: #хз почему, но так надо
+        model = Post #какую модель создаем
+        fields = ('title', 'text',) #поля которые заполняются
