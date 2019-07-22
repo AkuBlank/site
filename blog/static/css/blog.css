@@ -1,16 +1,40 @@
+.large-header {
+	position: relative;
+	width: 100%;
+	background: #333;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	z-index: 1;
+  background-image: url('images/bg.jpg');
+}
+
+.main-title {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	color: #f9f1e9;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+
 body {
     padding-left: 0px;
     font-family: 'Comfortaa', cursive;
     font-size: 20pt;
+    color: #ffffff;
     background-color: #000000;
 }
 
 h1 a {
-    color: #7ed696;
+    color: #f0e335
 }
 
 .page-header {
-    background-color: #7ed696;
+    background-color: #f0e335;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
@@ -27,7 +51,7 @@ h1 a {
 
 
 .date {
-    color: #7ed696;
+    color: #f0e335;
 }
 
 .save {
@@ -36,6 +60,11 @@ h1 a {
 
 .post-form textarea, .post-form input {
     width: 100%;
+    background-color: #000000;
+}
+
+.post-form h1, .post-form p {
+  color: #ffffff;
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
@@ -48,6 +77,7 @@ h1 a {
 .post {
     margin-bottom: 70px;
     font-size: 22pt;
+    color: #ffffff;
 }
 
 .post h1, .post h1 a, .post h1 a:visited{

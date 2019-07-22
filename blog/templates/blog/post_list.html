@@ -1,13 +1,52 @@
-{% extends 'blog/base.html' %}
+{% load static %}
 
-{% block content %}
-    {% for post in posts %}
-        <div class="post">
-            <div class="date">
-                {{ post.published_date }}
-            </div>
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ПЗС</title>
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" type="image/ico" href="{% static "favicon.ico" %}">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <script type="text/javascript" src="http://www.rudebox.org.ua/js/jquery.js"></script>
+    </head>
+    <body>
+        <div id="large-header" class="large-header">
+          <canvas id="demo-canvas"></canvas>
+          <h1 class="main-title">Пролистав ниже вы увидите основной контент сайта, эта штука просто для демонстрации :)</h1>
         </div>
-    {% endfor %}
-{% endblock %}
+        <div class="page-header">
+            {% if user.is_authenticated %}
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
+            <h1><a href="/">Первый запущенный сайт</a></h1>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% for post in posts %}
+                        <div class="post">
+                            <div class="date">
+                                {{ post.published_date }}
+                            </div>
+                            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                            <p>{{ post.text|linebreaksbr }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <script src="static/js/TweenLite.min.js"></script>
+        <script src="static/js/EasePack.min.js"></script>
+        <script src="static/js/rAF.js"></script>
+        <script src="static/js/demo-1.js"></script>
+    </body>
+</html>
+
+<body>
+  <div id="large-header" class="large-header">
+    <canvas id="demo-canvas"></canvas>
+    <h1 class="main-title">Пролистав ниже вы увидите основной контент сайта, эта штука просто для демонстрации :)</h1>
+  </div>
+</body>
